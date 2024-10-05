@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+README.rst
+pyproject.toml
+setup.py
+django_markdown_model/__init__.py
+django_markdown_model/fields.py
+django_markdown_model/models.py
+django_markdown_model.egg-info/PKG-INFO
+django_markdown_model.egg-info/SOURCES.txt
+django_markdown_model.egg-info/dependency_links.txt
+django_markdown_model.egg-info/requires.txt
+django_markdown_model.egg-info/top_level.txt
+django_markdown_model/utils/__init__.py
+django_markdown_model/utils/constants.py

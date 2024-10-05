@@ -1,8 +1,25 @@
+Metadata-Version: 2.1
+Name: django-markdown-model
+Version: 1.0
+Summary: This package allows you to store and render Markdown content effortlessly, making it ideal for applications that require rich text input from users.
+Home-page: https://github.com/mohitprajapat2001/django-markdown-model
+Author: Mohit Prajapat
+Author-email: mohitdevelopment2001@gmail.com
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # Django Markdown Model
 
 Django Markdown Model is a Python project that provides a simple way to integrate a Markdown field into your Django models. This package allows you to store and render Markdown content effortlessly, making it ideal for applications that require rich text input from users.
-
-https://pypi.org/project/django-markdown-model/1.0/
 
 ## Features
 
