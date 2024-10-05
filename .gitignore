@@ -1,0 +1,11 @@
+_.pyc
+**pycache**/
+db.sqlite3
+.env
+_.egg-info/
+dist/
+build/
+.vscode
+.idea
+__pycache__
+.pypirc
