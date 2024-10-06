@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Markdown Example{% endblock %}</title>
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+    {% include 'example/css.html' %}
+</head>
+
+<body data-theme="dark">
+    {% csrf_token %}
+    <div id="mainContent">
+        {% include 'example/navbar.html' %}
+        {% block content %}{% endblock %}
+        {% include 'example/footer.html' %}
+    </div>
+    {% include 'example/messages.html' %}
+</body>
+{% include 'example/js.html' %}
+
+</html>

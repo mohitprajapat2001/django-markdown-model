@@ -9,3 +9,4 @@ build/
 .idea
 __pycache__
 .pypirc
+.venv

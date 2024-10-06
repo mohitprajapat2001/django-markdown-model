@@ -1,0 +1,13 @@
+{% load static %}
+{% if messages %}
+<div class="absolute top-0 end-0 m-5" id="toast-messages">
+    <div role="alert" class="alert alert-info">
+        <i class="fa fa-info-circle"></i>
+        <span>
+            {% for message in messages %}
+            <strong>{{ message|safe }}</strong>
+            {% endfor %}
+        </span>
+    </div>
+</div>
+{% endif %}

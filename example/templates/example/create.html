@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Create{% endblock %}
+
+{% block content %}
+<div class="bg-base-200 min-h-screen w-full">
+    <div class="hero-content text-center mx-auto">
+        <form class="w-full" method="post">
+            {% csrf_token %}
+            <h1 class="text-5xl font-bold capitalize">Create New Blog Post</h1>
+            <p class="py-6">
+                {% for field in form %}
+                <label class="form-control w-full capitalize" for="field.id_for_label">
+                    <div class="label">
+                        <span class="label-text">{{field.label}}</span>
+                    </div>
+                    {{field}}
+                </label>
+                {% endfor %}
+            </p>
+            <button class="btn btn-secondary mt-10 transition delay-50 duration-300 scale-95 hover:scale-100">Create
+                New Blog</button>
+        </form>
+    </div>
+</div>
+<button class="fixed bottom-0 end-0 end m-10 btn btn-primary" onclick="my_modal_5.showModal()">View Markdown
+    Format</button>
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box" style="scrollbar-width: none;">
+        <form method="dialog">
+            <button
+                class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 scale-95 transition delay-50 duration-300 hover:rotate-45 hover:scale-100 ">✕</button>
+        </form>
+        <h3 class="text-lg font-bold">Introduction to Markdown!</h3>
+        <p class="py-4">
+        <h2 class="text-xl font-bold mb-4"></h2>
+        <p class="mb-4">
+            Markdown is a lightweight markup language with plain-text formatting syntax. Its key design goal is to
+            be
+            easy to read and write.
+        </p>
+
+        <h3 class="text-lg font-semibold mb-2">Basic Syntax</h3>
+        <ul class="list-disc list-inside mb-4">
+            <li><strong>Headers:</strong> Use `#` for H1, `##` for H2, etc.</li>
+            <li><strong>Bold:</strong> Wrap text in `**double asterisks**` or `__double underscores__`.</li>
+            <li><strong>Italic:</strong> Wrap text in `*single asterisk*` or `_single underscore_`.</li>
+            <li><strong>Lists:</strong> Use `-` for unordered lists and `1.` for ordered lists.</li>
+            <li><strong>Links:</strong> Use `[text](URL)` for links.</li>
+            <li><strong>Images:</strong> Use `![alt text](image URL)` for images.</li>
+        </ul>
+
+        <h3 class="text-lg font-semibold mb-2">Example</h3>
+        <div class="mockup-code">
+            <pre><code>  # This is a Heading
+    **This text is bold**
+    *This text is italic*</code></pre>
+        </div>
+        <div class="modal-action">
+            <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+            </form>
+        </div>
+    </div>
+</dialog>
+
+{% endblock %}

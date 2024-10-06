@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_tags %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<div class="container mx-auto p-4">
+    <header class="text-center mb-6">
+        <h1 class="text-4xl font-bold">About Django Markdown Model</h1>
+        <p class="mt-2 text-lg">Django Markdown Model is a Python project that provides a simple way to integrate a
+            Markdown field into your
+            Django models. This package allows you to store and render Markdown content effortlessly, making it ideal
+            for
+            applications that require rich text input from users.</p>
+    </header>
+    <hr>
+    <h1 class="text-2xl mt-5 font-bold text-center">About Django Markdown Model</h1>
+    <div class="flex justify-center my-10 items-center">
+        <div class="stats shadow" data-aos="fade-up">
+            <div class="stat">
+                <div class="stat-figure text-secondary">
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="stat-title">Stars</div>
+                <div class="stat-value">{% format_number stars %}</div>
+                <div class="stat-desc">↗︎ <a href="https://github.com/mohitprajapat2001/django-markdown-model/"
+                        target="_blank" class="text-decoration-none">Repository</a></div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-figure text-secondary">
+                    <i class="fa fa-bullseye"></i>
+                </div>
+                <div class="stat-title">Project Hit</div>
+                <div class="stat-value">{% format_number hit %}</div>
+                <div class="stat-desc">5 Oct 2024 - Today</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-figure text-secondary">
+                    <i class="fa fa-clock"></i>
+                </div>
+                <div class="stat-title">Last Updated</div>
+                <div class="stat-value">{% time_ago updated %}</div>
+                <div class="stat-desc">↗︎</div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2 class="text-2xl font-semibold mt-8 mb-4 text-center">Features</h2>
+    <ul class="timeline timeline-vertical my-10">
+        <li>
+            <div class="timeline-start timeline-box">Easily store and manage Markdown content in your
+                Django models.</div>
+            <div class="timeline-middle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                    class="text-primary h-5 w-5">
+                    <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+            <hr class="bg-primary" />
+        </li>
+        <li>
+            <hr class="bg-primary" />
+            <div class="timeline-middle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                    class="text-primary h-5 w-5">
+                    <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="timeline-end timeline-box">Quick setup and integration into existing Django
+                projects.</div>
+            <hr class="bg-primary" />
+        </li>
+        <li>
+            <hr class="bg-primary" />
+            <div class="timeline-start timeline-box">Supports various Markdown renderers for
+                displaying content.</div>
+            <div class="timeline-middle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                    class="text-primary h-5 w-5">
+                    <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+        </li>
+    </ul>
+    <div class="container  mx-auto p-6">
+        <hr>
+        <h2 class="text-2xl font-semibold mt-8 mb-4">Installation</h2>
+        <p class="kbd">
+            pip install django-markdown-model
+        </p>
+
+        <h2 data-aos="fade-up" class="text-2xl font-semibold mt-8 mb-4">Usage</h2>
+        <p class="mb-2" data-aos="fade-up">To use this package in your Django project, follow these steps:</p>
+        <ol class="list-decimal list-inside mb-6">
+            <li data-aos="fade-up">
+                Add <code>django_markdown_model</code> to your <code>INSTALLED_APPS</code> in your Django settings:
+                <pre class="kbd block my-5">
+                    <code>
+INSTALLED_APPS = [
+    ...
+    'django_markdown_model',
+]</code>
+                </pre>
+            </li>
+            <li data-aos="fade-up">
+                Create your models using <code>MarkdownField</code>:
+                <pre class="kbd block my-5">
+                    <code>
+from django.db import models
+from django_markdown_model.fields import MarkdownField
+
+class MyModel(models.Model):
+    title = models.CharField(max_length=200)
+    content = MarkdownField()
+
+    def __str__(self):
+        return self.title
+                    </code>
+                </pre>
+            </li>
+            <li data-aos="fade-up">
+                Use Abstract Model <code>MarkdownModel</code>:
+                <pre class="kbd block my-5">
+                    <code>
+from django.db import models
+from django_markdown_model.fields import MarkdownField
+
+class MyModel(MarkdownModel):
+    pass
+                    </code>
+                </pre>
+            </li>
+            <li data-aos="fade-up">
+                Render Markdown in your templates:
+                <pre class="kbd block my-5">
+    <code>
+    my_model.title|safe 
+    my_model.content|safe</code>
+                </pre>
+            </li>
+        </ol>
+
+        <h2 data-aos="fade-up" class="text-2xl font-semibold mt-8 mb-4">Example</h2>
+        <p data-aos="fade-up" class="mb-6">See the <code>examples/</code> directory for a complete example of how to use
+            this package in a
+            Django project.</p>
+
+        <h2 data-aos="fade-up" class="text-2xl font-semibold mt-8 mb-4">Running Tests</h2>
+        <p data-aos="fade-up" class="mb-6">Tests are under development.</p>
+
+        <h2 data-aos="fade-up" class="text-2xl font-semibold mt-8 mb-4">Contributing</h2>
+        <p data-aos="fade-up" class="mb-6">Contributions are welcome! Please submit a pull request or open an issue.</p>
+
+        <h2 data-aos="fade-up" class="text-2xl font-semibold mt-8 mb-4">License</h2>
+        <p data-aos="fade-up" class="mb-6">This project is licensed under the MIT License - see the <a
+                href="https://github.com/mohitprajapat2001/django-markdown-model/blob/develop/LICENSE  "
+                class="text-blue-600 underline">LICENSE</a> file for details.</p>
+    </div>
+</div>
+
+{% endblock %}

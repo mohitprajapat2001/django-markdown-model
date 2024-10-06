@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Error 400{% endblock %}
+
+{% block content %}
+<div class="card bg-base-100 w-96 mx-auto my-10 shadow-xl">
+    <div class="card-body">
+        <h2 class="card-title text-error">400!</h2>
+        <p>Your request could not be understood by the server.</p>
+        <div class="card-actions justify-end">
+            <a href="{% url 'index' %}" class="btn btn-primary">Go Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
